@@ -36,6 +36,7 @@ export function initMixin (Vue: Class<Component>) {
       initInternalComponent(vm, options)
     } else {
       vm.$options = mergeOptions(
+        // 解析构造函数中的options
         resolveConstructorOptions(vm.constructor),
         options || {},
         vm
@@ -90,6 +91,7 @@ export function initInternalComponent (vm: Component, options: InternalComponent
   }
 }
 
+// 解析构造函数的options
 export function resolveConstructorOptions (Ctor: Class<Component>) {
   let options = Ctor.options
   if (Ctor.super) {

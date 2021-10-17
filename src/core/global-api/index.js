@@ -62,8 +62,15 @@ export function initGlobalAPI (Vue: GlobalAPI) {
 
   extend(Vue.options.components, builtInComponents)
 
+  // Vue上添加 use行为
   initUse(Vue)
+
+  // Vue上添加 mixin行为
   initMixin(Vue)
+
+  // Vue上添加 extend行为
   initExtend(Vue)
+
+  // Vue上添加 component、directive、filter等asset注册行为
   initAssetRegisters(Vue)
 }
