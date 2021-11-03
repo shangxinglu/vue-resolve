@@ -53,7 +53,7 @@ eventsMixin(Vue)
 // 在原型上添加_update、$forceUpdate、$destroy行为
 lifecycleMixin(Vue)
 
-// 在原型安装渲染帮助函数和_render行为
+// 在原型安装渲染help函数和_render行为
 renderMixin(Vue)
 
 export default Vue
