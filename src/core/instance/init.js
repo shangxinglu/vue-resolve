@@ -28,7 +28,7 @@ export function initMixin (Vue: Class<Component>) {
 
     // a flag to avoid this being observed
     vm._isVue = true
-    // merge options
+    // merge optionss
     if (options && options._isComponent) {
       // optimize internal component instantiation
       // since dynamic options merging is pretty slow, and none of the
@@ -50,8 +50,20 @@ export function initMixin (Vue: Class<Component>) {
     }
     // expose real self
     vm._self = vm
+    /**
+     * 状态
+     * $parent,$root,$children,$refs
+     * _watcher,_inactive,_directInactive,
+     * _isMounted,_isDestroyed,_isBeingDestroyed
+     */
     initLifecycle(vm)
+
+    /**
+     * 状态
+     * _events,_hasHookEvent
+     */
     initEvents(vm)
+
     initRender(vm)
     callHook(vm, 'beforeCreate')
     initInjections(vm) // resolve injections before data/props
