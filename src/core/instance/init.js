@@ -61,9 +61,18 @@ export function initMixin (Vue: Class<Component>) {
     /**
      * 状态
      * _events,_hasHookEvent
+     * 
+     * 行为
+     * 更新监听器
      */
     initEvents(vm)
 
+    /**
+     * 状态
+     * _vnode,_staticTrees,
+     * $vnode,$slots,$scopedSlots,_c,$createElement
+     * $listeners,$attrs
+     */
     initRender(vm)
     callHook(vm, 'beforeCreate')
     initInjections(vm) // resolve injections before data/props
