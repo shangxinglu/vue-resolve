@@ -49,6 +49,13 @@ export function proxy (target: Object, sourceKey: string, key: string) {
 export function initState (vm: Component) {
   vm._watchers = []
   const opts = vm.$options
+  /**
+   * vm状态
+   * _props
+   * 
+   * vm.$options状态
+   * _propKeys
+   */
   if (opts.props) initProps(vm, opts.props)
   if (opts.methods) initMethods(vm, opts.methods)
   if (opts.data) {
