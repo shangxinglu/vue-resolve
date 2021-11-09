@@ -57,7 +57,12 @@ export function initState (vm: Component) {
    * _propKeys
    */
   if (opts.props) initProps(vm, opts.props)
-  if (opts.methods) initMethods(vm, opts.methods)
+  
+  if (opts.methods) 
+  /**
+   * 将methods中的方法挂载到vm上
+   */
+  initMethods(vm, opts.methods)
   if (opts.data) {
     initData(vm)
   } else {
