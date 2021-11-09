@@ -21,12 +21,20 @@
             'test':{
             props:['test'],
 
-                template:`<div>123</div>`
+                template:`
+                <div>
+
+                    <slot></slot>
+                </div>`
             }
         },
         template:`
         <div> 
-            <test :test="123"></test>
+            <test :test="ffff">
+                <div>1111111</div>
+                <div>2222222</div>
+
+            </test>
             </div>
         `
     })
