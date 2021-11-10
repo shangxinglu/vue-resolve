@@ -53,7 +53,12 @@ eventsMixin(Vue)
 // 在原型上添加_update、$forceUpdate、$destroy行为
 lifecycleMixin(Vue)
 
-// 在原型安装渲染help函数和_render行为
+/**
+ * 在原型上添加
+ * 
+ * 行为
+ * 渲染help函数,_render,$nextTick
+ */
 renderMixin(Vue)
 
 export default Vue
