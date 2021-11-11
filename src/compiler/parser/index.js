@@ -501,6 +501,7 @@ function processRef (el) {
 export function processFor (el: ASTElement) {
   let exp
   if ((exp = getAndRemoveAttr(el, 'v-for'))) {
+    // 解析出for循环的循环变量
     const res = parseFor(exp)
     if (res) {
       extend(el, res)
@@ -519,6 +520,7 @@ type ForParseResult = {
   iterator1?: string;
   iterator2?: string;
 };
+
 
 export function parseFor (exp: string): ?ForParseResult {
   const inMatch = exp.match(forAliasRE)
