@@ -219,6 +219,7 @@ export function parse (
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     // 是否保留注释
     shouldKeepComment: options.comments,
+    // 显示输出范围
     outputSourceRange: options.outputSourceRange,
     start (tag, attrs, unary, start, end) {
       // check namespace.
@@ -389,6 +390,7 @@ export function parse (
         }
       }
     },
+    
     comment (text: string, start, end) {
       // adding anything as a sibling to the root node is forbidden
       // comments should still be allowed, but ignored

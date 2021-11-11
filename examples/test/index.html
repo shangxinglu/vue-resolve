@@ -17,6 +17,9 @@
     const vue = new Vue({
         el: '#app',
         name:'app',
+        data:{
+            arr1:[9,9,9,9,9]
+        },
         components:{
             'test':{
             props:['test'],
@@ -30,12 +33,12 @@
         },
         template:`
         <div> 
-            <test :test="ffff">
+            <test >
                 <div>1111111</div>
                 <div>2222222</div>
-
             </test>
-            </div>
+            <div v-for="(value,key) of arr1">{{key}}</div>
+        </div>
         `
     })
 </script>
