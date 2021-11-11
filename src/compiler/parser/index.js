@@ -207,11 +207,17 @@ export function parse (
 
   parseHTML(template, {
     warn,
+    // 期望HTML
     expectHTML: options.expectHTML,
+    // 是否是一元标签
     isUnaryTag: options.isUnaryTag,
+    // 是否保留打开标签
     canBeLeftOpenTag: options.canBeLeftOpenTag,
+    // 是否解析换行符
     shouldDecodeNewlines: options.shouldDecodeNewlines,
+    // 是否解析href的换行符
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
+    // 是否保留注释
     shouldKeepComment: options.comments,
     outputSourceRange: options.outputSourceRange,
     start (tag, attrs, unary, start, end) {
