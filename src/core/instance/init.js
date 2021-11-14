@@ -67,6 +67,8 @@ export function initMixin (Vue: Class<Component>) {
      */
     initEvents(vm)
 
+
+
     /**
      * 状态
      * _vnode,_staticTrees,

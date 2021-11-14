@@ -442,6 +442,7 @@ export function processElement (
   element: ASTElement,
   options: CompilerOptions
 ) {
+  // 获取key的表达式添加到el.key
   processKey(element)
 
   // determine whether this is a plain element after
@@ -452,9 +453,13 @@ export function processElement (
     !element.attrsList.length
   )
 
+  // 处理ref属性
   processRef(element)
+  // 处理slot插槽
   processSlotContent(element)
+  // 处理slot标签
   processSlotOutlet(element)
+  // 处理动态组件
   processComponent(element)
   for (let i = 0; i < transforms.length; i++) {
     element = transforms[i](element, options) || element
@@ -463,6 +468,7 @@ export function processElement (
   return element
 }
 
+// 获取el中的key
 function processKey (el) {
   const exp = getBindingAttr(el, 'key')
   if (exp) {
@@ -490,6 +496,7 @@ function processKey (el) {
   }
 }
 
+// 获取el中的ref
 function processRef (el) {
   const ref = getBindingAttr(el, 'ref')
   if (ref) {
@@ -906,6 +913,8 @@ function processAttrs (el) {
   }
 }
 
+
+// 检查是否在for循环中
 function checkInFor (el: ASTElement): boolean {
   let parent = el
   while (parent) {
@@ -917,6 +926,8 @@ function checkInFor (el: ASTElement): boolean {
   return false
 }
 
+
+// 解析修饰符
 function parseModifiers (name: string): Object | void {
   const match = name.match(modifierRE)
   if (match) {

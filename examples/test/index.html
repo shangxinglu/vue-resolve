@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,34 +13,8 @@
 
 </body>
 <script src="/dist/vue.js"></script>
-<script>
+<script type="module" src="./index.js">
    
-    const vue = new Vue({
-        el: '#app',
-        name:'app',
-        data:{
-            arr1:[9,9,9,9,9]
-        },
-        components:{
-            'test':{
-            props:['test'],
 
-                template:`
-                <div>
-
-                    <slot></slot>
-                </div>`
-            }
-        },
-        template:`
-        <div> 
-            <test >
-                <div>1111111</div>
-                <div>2222222</div>
-            </test>
-            <div v-for="(value,key) of arr1">{{key}}</div>
-        </div>
-        `
-    })
 </script>
 </html> 

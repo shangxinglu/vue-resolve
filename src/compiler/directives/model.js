@@ -67,12 +67,15 @@ type ModelParseResult = {
   key: string | null
 }
 
+
+// 解析v-model中的key和key之前的表达式
 export function parseModel (val: string): ModelParseResult {
   // Fix https://github.com/vuejs/vue/pull/7730
   // allow v-model="obj.val " (trailing whitespace)
   val = val.trim()
   len = val.length
-
+  
+  // 当表达式不以[开头或]结尾，解析出key和key之前的表达式
   if (val.indexOf('[') < 0 || val.lastIndexOf(']') < len - 1) {
     index = val.lastIndexOf('.')
     if (index > -1) {

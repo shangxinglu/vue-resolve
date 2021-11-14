@@ -66,6 +66,7 @@ function prependModifierMarker (symbol: string, name: string, dynamic?: boolean)
     : symbol + name // mark the event as captured
 }
 
+// 添加处理函数
 export function addHandler (
   el: ASTElement,
   name: string,

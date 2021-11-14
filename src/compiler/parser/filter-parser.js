@@ -99,6 +99,7 @@ export function parseFilters (exp: string): string {
   return expression
 }
 
+// 包装过滤器
 function wrapFilter (exp: string, filter: string): string {
   const i = filter.indexOf('(')
   if (i < 0) {

@@ -59,8 +59,10 @@ export function genElement (el: ASTElement, state: CodegenState): string {
   }
 
   if (el.staticRoot && !el.staticProcessed) {
+    // 生成静态节点
     return genStatic(el, state)
   } else if (el.once && !el.onceProcessed) {
+    // 生成一次性节点
     return genOnce(el, state)
   } else if (el.for && !el.forProcessed) {
     return genFor(el, state)
