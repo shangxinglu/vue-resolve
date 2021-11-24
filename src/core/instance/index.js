@@ -44,7 +44,7 @@ function Vue (options) {
 // 在原型添_init行为
 initMixin(Vue) 
 // 在原型添加$data、$props状态,
-// $set、$delete、$watch行为
+// $set、$delete、$watch行为  
 stateMixin(Vue) 
 
 // 在原型上添加事件相关行为$on、$once、$off、$emit
